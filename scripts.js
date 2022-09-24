@@ -1,0 +1,87 @@
+var products = [
+    {
+        "photo": "img/big-mac.png",
+        "name": "Big Mac",
+        "price": 5.99,
+        "active": false,
+        "quantity": 1
+    },
+    {
+        "photo": "img/mc-chicken.png",
+        "name": "Mc Chicken",
+        "price": 4.99,
+        "active": false,
+        "quantity": 1
+    },
+    {
+        "photo": "img/double-cb.png",
+        "name": "Double Cheese Burger",
+        "price": 2.99,
+        "active": false,
+        "quantity": 1
+    },
+    {
+        "photo": "img/fries.png",
+        "name": "Batata frita",
+        "price": 2.99,
+        "active": false,
+        "quantity": 1
+    },
+    {
+        "photo": "img/nuggets.png",
+        "name": "Mc Nuggets",
+        "price": 3.49,
+        "active": false,
+        "quantity": 1
+    },
+    {
+        "photo": "img/salad.png",
+        "name": "Salada",
+        "price": 2.79,
+        "active": false,
+        "quantity": 1
+    },
+    {
+        "photo": "img/cola.png",
+        "name": "Coca Cola",
+        "price": 1.99,
+        "active": false,
+        "quantity": 1
+    },
+    {
+        "photo": "img/lipton.png",
+        "name": "Ice Tea",
+        "price": 1.99,
+        "active": false,
+        "quantity": 1
+    },
+    {
+        "photo": "img/water.png",
+        "name": "Água",
+        "price": 1.49,
+        "active": false,
+        "quantity": 1
+    }
+];
+//objeto que guarda a lógica da aplicação 
+const SelfServiceMachine = {
+
+    //Função data que retorna os dados da aplicação
+    data() {
+        //retorna uma propriedade
+        return {
+            //mensagem de teste
+            // message: "Hello World"
+
+            products: window.products
+
+        }
+
+    }
+
+
+};
+
+//como argumento passa o objeto que guarda a logica da aplicação
+//o metodo Mount inicializa a aplicação
+Vue.createApp(SelfServiceMachine).mount('#app');
