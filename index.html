@@ -19,9 +19,16 @@
                 <h4>Pick Your Items</h4>
 
                 <!--Para cada produto encontrado dentro do ARRAY PRODUCTS será executado esta esrutura-->
-                <div v-for="product in products" class="product">
+                <!-- @click="product.active = !product.active" quando for clicado vai receber o valor diferente para a propriedade active-->
+                <!--:class = "products.active ? 'selected': '' operado ternário define se a propriedade for verdadadeiro então adiciona a classe "-->
+                <div v-for="product in products"
+                class="product"
+                @click="product.active = !product.active"
+
+                :class="product.active ? 'selected' : ''"
+                >
                     <div class="photo">
-                        <!--Os dois pontos : representa que ali esta sendo passado uma variavel-->
+                        <!--Os dois pontos : representa que ali esta sendo passado uma variavel , são uma repesentaçao do v-bind-->
                         <img :src="product.photo">
                     </div>
                     <div class="description">
