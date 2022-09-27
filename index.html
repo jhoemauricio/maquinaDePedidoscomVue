@@ -34,10 +34,15 @@
                     <div class="description">
                         <span class="name">{{product.name}}</span>
                         <span class="price">{{product.price}}</span>
-                        <div class="quantity-area">
-                            <button>-</button>
+                        <!--O v-if é utilizado aqui para mostrar ou não determinado elemento, se product.active for verdadeiro então mostra o elemento ou seja
+                        quando for clicado-->
+                        <div class="quantity-area" v-if="product.active">
+
+                            <!--atribui o evento click com o decremento, tambem utiliza o event modifiers .stop-->
+                            <!--quando :disabled for verdadeiro executa o condição-->
+                            <button @click.stop="product.quantity--" :disabled="product.quantity <= 1">-</button>
                             <span class="quantity">{{product.quantity}}</span>
-                            <button>+</button>
+                            <button @click.stop="product.quantity++">+</button>
                         </div>
                     </div>
                 </div>
